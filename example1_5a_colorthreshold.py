@@ -21,7 +21,7 @@ while(True):
 
     #if(np.sum(mask/255) > 10000):  # เอาไว้กำหนดระยะของวัตถุ "10000" ไม่เหมาะสมถ้า size ของรูปเปลี่ยน ไม่ Dynamic
     if (np.sum(mask / 255) > 0.02*TARGET_SIZE[0]*TARGET_SIZE[1]):
-        #cv2.putText(im_flipped,'Coke',(50,100),cv2.FONT_HERSHEY_PLAIN,5,(255,255,255))
+        cv2.putText(im_flipped,'Coke',(50,100),cv2.FONT_HERSHEY_PLAIN,5,(255,255,255))
 
 
     cv2.imshow('camera', im_flipped)
