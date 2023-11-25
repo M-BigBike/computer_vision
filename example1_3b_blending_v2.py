@@ -9,7 +9,7 @@ im_list = []
 while(True):
     ret,im = cap.read()
     im_resized = cv2.resize(im, (640,360))
-    im_flipped = cv2.flip(im_resized, 1).astype('float')
+    im_flipped = cv2.flip(im_resized, 1).astype('float') #แปลงเป็น float ก่อน
 
     if len(im_list) == L:
         im_list = im_list[1:]
@@ -17,7 +17,7 @@ while(True):
 
     im_list.append(im_flipped)
     im_out = sum(im_list)/len(im_list)
-    cv2.imshow('camera',im_out.astype(np.uint8))
+    cv2.imshow('camera',im_out.astype(np.uint8)) #แปลงกลับเป็น uint8 ทีหลัง
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

@@ -1,3 +1,5 @@
+# ตัวอย่างเกมตีตัวตุ่น
+
 import cv2
 import numpy as np
 from random import randint
@@ -29,7 +31,7 @@ while(True):
                   (255,0,255),
                   3)
 
-    if hue > 300 and hue < 350 and sat > 100:
+    if hue > 300 and hue < 350 and sat > 100: # ถ้าอุปกรณ์ตี เป็นสีชมพู ให้ +1 score
         score += 1
         row = randint(20, TARGET_SIZE[1] - 20)
         col = randint(20, TARGET_SIZE[0] - 20)
