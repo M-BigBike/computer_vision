@@ -14,13 +14,14 @@ while(True):
     cv2.imshow('mask', mask)
     cv2.moveWindow('mask',TARGET_SIZE[0],0)
 
-    mask2 = cv2.inRange(im_flipped, (0, 40, 0), (100, 255, 50)) #sprite
+    mask2 = cv2.inRange(im_flipped, (0, 100, 0), (80, 255, 80)) #sprite
     cv2.imshow('mask2', mask2)
     cv2.moveWindow('mask2', TARGET_SIZE[0], 0)
 
-    mask3 = cv2.inRange(im_flipped, (90, 0, 0), (50, 50, 255)) #pepsi
+    mask3 = cv2.inRange(im_flipped, (50, 0, 0), (255, 150, 150)) #pepsi
     cv2.imshow('mask3', mask3)
     cv2.moveWindow('mask3', TARGET_SIZE[0], 0)
+
 
     #############################################
     h, w = im_flipped.shape[:2]
@@ -51,9 +52,9 @@ while(True):
 
     if(np.sum(mask/255) > 0.01*h*w):
         cv2.putText(im_flipped,'Coke',(50,100),cv2.FONT_HERSHEY_PLAIN,5,(255,255,255))
-    elif(np.sum(mask/255) > 0.01*h*w):
+    elif(np.sum(mask2/255) > 0.01*h*w):
         cv2.putText(im_flipped, 'Sprite', (50, 100), cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255))
-    elif (np.sum(mask / 255) > 0.01 * h * w):
+    elif (np.sum(mask3 / 255) > 0.01 * h * w):
         cv2.putText(im_flipped, 'Pepsi', (50, 100), cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255))
     else:
         cv2.putText(im_flipped, 'No detect', (50, 100), cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255))
