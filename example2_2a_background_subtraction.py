@@ -2,14 +2,15 @@ import cv2
 
 #Download 'ExampleBGSubtraction.avi' from https://drive.google.com/file/d/1OD_A0wqN2Om2SusCztybu-_hMSUQuRt7/view?usp=sharing
 
-cap = cv2.VideoCapture('ExampleBGSubtraction.avi')
+cap = cv2.VideoCapture('C:/Users/Ez-Studio/Downloads/MasterDS/2-66/Computer Vision/ExampleBGSubtraction.avi')
 
 haveFrame,bg = cap.read()
 
+# Program will read new frame continue follow by the loop
 while(cap.isOpened()):
     haveFrame,im = cap.read()
 
-    if (not haveFrame) or (cv2.waitKey(1) & 0xFF == ord('q')):
+    if (not haveFrame) or (cv2.waitKey(50) & 0xFF == ord('q')):
         break
 
     diffc = cv2.absdiff(im,bg)

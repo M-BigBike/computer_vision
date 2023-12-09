@@ -4,6 +4,9 @@
 
 import cv2
 
+
+# การบ้าน: นับเหรียญแบบแยกสี ให้ได้ทกภาพ
+
 def coinCounting(filename):
     im = cv2.imread(filename)
     target_size = (int(im.shape[1]/2),int(im.shape[0]/2))

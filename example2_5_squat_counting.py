@@ -6,6 +6,8 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+# การบ้าน: เขาลุกนั่งกี่ครั้ง
+
 def squatCounting(filename):
 
     cap = cv2.VideoCapture(filename)

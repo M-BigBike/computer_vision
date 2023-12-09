@@ -2,7 +2,7 @@ import cv2
 
 #Download 'ExampleBGSubtraction.avi' from https://drive.google.com/file/d/1OD_A0wqN2Om2SusCztybu-_hMSUQuRt7/view?usp=sharing
 
-cap = cv2.VideoCapture('ExampleBGSubtraction.avi')
+cap = cv2.VideoCapture('C:/Users/Ez-Studio/Downloads/MasterDS/2-66/Computer Vision/ExampleBGSubtraction.avi')
 
 haveFrame,bg = cap.read()
 
@@ -16,8 +16,9 @@ while(cap.isOpened()):
     diffg = cv2.cvtColor(diffc,cv2.COLOR_BGR2GRAY)
     bwmask = cv2.inRange(diffg,50,255)
 
-    bwmask_median = cv2.medianBlur(bwmask,5)
+    bwmask_median = cv2.medianBlur(bwmask,5) # Medium filer
 
+    # findContours ues for block detecttion
     contours,hierarchy = cv2.findContours(bwmask_median, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) #for opencv 4.x.x
     #contourmask,contours,hierarchy = cv2.findContours(bwmask_median, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) #for opencv 3.2.x 3.4.x
     #contourmask,contours,hierarchy = cv2.findContours(bwmask_median.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE) #for opencv 3.1.x
