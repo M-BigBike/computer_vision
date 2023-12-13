@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 
 def detect_coins(image_path):
     # Load the image
-    image = cv2.imread('C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin4.jpg')
+    image = cv2.imread('C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin10.jpg')
     # Convert the image to the HSV color space
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
@@ -52,7 +52,7 @@ def detect_coins(image_path):
 
 def detect_coins_with_morphology(image_path):
     # Load the image
-    image = cv2.imread('C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin3.jpg')
+    image = cv2.imread('C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin10.jpg')
     # Convert the image to the HSV color space
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 

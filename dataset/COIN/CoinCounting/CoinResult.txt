@@ -1,0 +1,10 @@
+coin1 = TRUE (5, 8)
+coin2 = TRUE (6, 3)
+coin3 = FALSE (2,6) TRUE is 2, 4
+coin4 = TRUE (2, 4)
+coin5 = FALSE (1, 4) TRUE is 1, 7
+coin6 = FALSE (3, 4) TRUE is 3, 5
+coin7 = FALSE (5, 4) TRUE is 4, 3
+coin8 = TRUE (5, 5)
+coin9 = FALSE (33, 13) TRUE is 2, 6
+coin10 = FALSE (4, 0) TRUE is 4, 2
