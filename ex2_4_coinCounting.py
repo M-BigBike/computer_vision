@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 
 def detect_coins(image_path):
     # Load the image
-    image = cv2.imread('C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin10.jpg')
+    image = cv2.imread('C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin3.jpg')
     # Convert the image to the HSV color space
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
@@ -52,7 +52,7 @@ def detect_coins(image_path):
 
 def detect_coins_with_morphology(image_path):
     # Load the image
-    image = cv2.imread('C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin10.jpg')
+    image = cv2.imread('C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin3.jpg')
     # Convert the image to the HSV color space
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
@@ -104,8 +104,8 @@ def detect_coins_with_morphology(image_path):
     return yellow_count, blue_count, image, mask_yellow, mask_blue
 
 
-# Re-process the first image with morphological operations and display the results
-results_morphology = detect_coins_with_morphology(image_paths[0])
+# Instead of image_paths[0], use image_path
+results_morphology = detect_coins_with_morphology(image_path)
 
 # Show the original image with detected contours and masks
 plt.figure(figsize=(10, 10))
@@ -125,4 +125,18 @@ plt.tight_layout()
 plt.show()
 
 # Return the count of yellow and blue coins
-results_morphology[0], results_morphology[1]
+# results_morphology[0], results_morphology[1]
+
+all_results = []
+
+for image_path in image_paths:
+    yellow_count, blue_count, _ = detect_coins(image_path)
+    all_results.append({
+        'file_name': Path(image_path).name,
+        'yellow_count': yellow_count,
+        'blue_count': blue_count
+    })
+
+# Display the results
+all_results
+

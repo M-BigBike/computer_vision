@@ -1,3 +1,4 @@
+Model 1: ex2_4_coinCounting.py [T4:F6]
 coin1 = TRUE (5, 8)
 coin2 = TRUE (6, 3)
 coin3 = FALSE (2,6) TRUE is 2, 4
@@ -8,3 +9,17 @@ coin7 = FALSE (5, 4) TRUE is 4, 3
 coin8 = TRUE (5, 5)
 coin9 = FALSE (33, 13) TRUE is 2, 6
 coin10 = FALSE (4, 0) TRUE is 4, 2
+
+-----------------
+
+Model 2: ex2_4V2.py [T2:F8]
+coin1 = TRUE (5, 8)
+coin2 = TRUE (6, 3)
+coin3 = FALSE (2,5) TRUE is 2, 4
+coin4 = FALSE (2, 3) TRUE (2, 4
+coin5 = FALSE (1, 8) TRUE is 1, 7
+coin6 = FALSE (0, 0) TRUE is 3, 5
+coin7 = FALSE (0, 10) TRUE is 4, 3
+coin8 = FALSE (0, 0) TRUE is 5, 5
+coin9 = FALSE (3, 3) TRUE is 2, 6
+coin10 = FALSE (0, 0) TRUE is 4, 2
