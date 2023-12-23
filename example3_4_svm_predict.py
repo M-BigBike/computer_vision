@@ -6,8 +6,8 @@ import cv2
 print('----------------- Process training inputs ---------------------')
 for im_id in range(1,4):
     print(im_id)
-    im = cv2.imread("SkinDetection\SkinTrain"+str(im_id)+".jpg")
-    mask = cv2.imread("SkinDetection\SkinTrain"+str(im_id)+"_mask.jpg",0)
+    im = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTrain"+str(im_id)+".jpg")
+    mask = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTrain"+str(im_id)+"_mask.jpg",0)
 
     im_hsv = cv2.cvtColor(im,cv2.COLOR_BGR2HSV)
     h = im_hsv[:,:,0]
@@ -52,7 +52,7 @@ svm.train(features.astype(np.float32), cv2.ml.ROW_SAMPLE, labels.astype(np.int32
 
 print('----------------- Testing ---------------------')
 for im_id in range(1,6):
-    im = cv2.imread("SkinDetection\SkinTest"+str(im_id)+".jpg")
+    im = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTest"+str(im_id)+".jpg")
 
     im_hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
     h = im_hsv[:, :, 0]

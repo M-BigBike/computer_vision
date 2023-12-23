@@ -3,16 +3,16 @@ from matplotlib import pyplot as plt
 
 # Download files from https://drive.google.com/file/d/1XdZLvORnCnfpyBYflh15I58VQrQdVlUe/view?usp=sharing
 
-h_skin_hist = 0
-h_nonskin_hist = 0
-s_skin_hist = 0
-s_nonskin_hist = 0
+h_skin_hist = 0 # N(h|skin) จำนวน px ทั้งหมด
+h_nonskin_hist = 0 # N(h|non-skin)
+s_skin_hist = 0 # N(s|skin)
+s_nonskin_hist = 0 # N(s|non-skin)
 for im_id in range(1, 4):
     print(im_id)
-    im = cv2.imread("SkinDetection\SkinTrain" + str(im_id) + ".jpg")
-    mask = cv2.imread("SkinDetection\SkinTrain" + str(im_id) + "_mask.jpg", 0)
+    im = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTrain" + str(im_id) + ".jpg")
+    mask = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTrain" + str(im_id) + "_mask.jpg", 0)
     im_hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
-    h_skin_hist = h_skin_hist + cv2.calcHist([im_hsv], [0], mask, [256], [0, 256])
+    h_skin_hist = h_skin_hist + cv2.calcHist([im_hsv], [0], mask, [256], [0, 256]) # ใส่ [0] = h, ใส่ [1] = s, ใส่ [2] = v
     h_nonskin_hist = h_nonskin_hist + cv2.calcHist([im_hsv], [0], 255 - mask, [256], [0, 256])
     s_skin_hist = s_skin_hist + cv2.calcHist([im_hsv], [1], mask, [256], [0, 256])
     s_nonskin_hist = s_nonskin_hist + cv2.calcHist([im_hsv], [1], 255 - mask, [256], [0, 256])

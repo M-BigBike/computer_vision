@@ -6,8 +6,8 @@ import cv2
 print('----------------- Process training inputs ---------------------')
 for im_id in range(1,4):
     print(im_id)
-    im = cv2.imread("SkinDetection\SkinTrain"+str(im_id)+".jpg")
-    mask = cv2.imread("SkinDetection\SkinTrain"+str(im_id)+"_mask.jpg",0)
+    im = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTrain"+str(im_id)+".jpg")
+    mask = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTrain"+str(im_id)+"_mask.jpg",0)
 
     im_hsv = cv2.cvtColor(im,cv2.COLOR_BGR2HSV)
     h = im_hsv[:,:,0]
@@ -44,8 +44,8 @@ print("features's shape: ", features.shape)
 
 svm = cv2.ml.SVM_create()
 svm.setKernel(cv2.ml.SVM_LINEAR)
-#svm.setKernel(cv2.ml.SVM_POLY)
-#svm.setDegree(10)
+svm.setKernel(cv2.ml.SVM_POLY)
+svm.setDegree(10)
 #svm.setKernel(cv2.ml.SVM_RBF)
 #svm.setGamma(0.01)
 svm.train(features.astype(np.float32), cv2.ml.ROW_SAMPLE, labels.astype(np.int32))
@@ -64,3 +64,5 @@ responses = svm.predict(features.astype(np.float32))[1]
 acc = np.count_nonzero(responses == labels)*100.0/len(labels)
 
 print('Accuracy :',acc)
+
+

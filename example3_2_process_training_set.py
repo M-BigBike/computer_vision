@@ -4,10 +4,11 @@ from matplotlib import pyplot as plt
 
 # Download files from https://drive.google.com/file/d/1XdZLvORnCnfpyBYflh15I58VQrQdVlUe/view?usp=sharing
 
+#for loop ทำกับทุกรูป
 for im_id in range(1, 4):
     print(im_id)
-    im = cv2.imread("SkinDetection\SkinTrain" + str(im_id) + ".jpg")
-    mask = cv2.imread("SkinDetection\SkinTrain" + str(im_id) + "_mask.jpg", 0)
+    im = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTrain" + str(im_id) + ".jpg")
+    mask = cv2.imread("C:/Users/Ez-Studio/computer_vision_660632034/dataset/SkinDetection/SkinTrain" + str(im_id) + "_mask.jpg", 0)
 
     im_hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV)
     h = im_hsv[:, :, 0]
@@ -47,5 +48,12 @@ plt.hist(s_skin_all,bins=180,color='r')
 
 plt.show()
 
+
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+print(h_skin_all.shape)
+print(s_skin_all.shape)
+print(h_nonskin_all.shape)
+print(s_nonskin_all.shape)

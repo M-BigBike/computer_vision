@@ -51,7 +51,7 @@ def detect_coins_with_circle_detection(image_path):
     return yellow_count, blue_count, image, mask_yellow, mask_blue
 
 # Apply the detection with Hough Circle Transform to the uploaded image
-coin4_path = 'C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin4.jpg'
+coin4_path = 'C:/Users/Ez-Studio/computer_vision_660632034/dataset/COIN/CoinCounting/coin1.jpg'
 results_circle_detection = detect_coins_with_circle_detection(coin4_path)
 
 # Show the original image with detected contours and masks
